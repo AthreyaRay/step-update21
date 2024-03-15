@@ -4,4 +4,4 @@ steps:
   commands:
   - TAGI=$(date)
   - buildkite-agent meta-data set 'TAG' '$(TAGI)'
-  - buildkite-agent step update "label" " 😎 :sunglasses: TAG=${TAGI}"
+  - buildkite-agent step update "label" ":sunglasses:"
