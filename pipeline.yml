@@ -3,5 +3,5 @@ steps:
   key: tag:create
   commands:
   - TAGI=$BUILDKITE_BUILD_ID
-  - buildkite-agent meta-data set 'TAG'  $BUILDKITE_BUILD_ID
-  - buildkite-agent step update "label" "TAG=$BUILDKITE_BUILD_ID \:sunglasses:\:sunglasses:"
+  - buildkite-agent meta-data set 'TAG'  $TAGI
+  - buildkite-agent step update "label" "TAG=$TAGI \:sunglasses:\:sunglasses:"
