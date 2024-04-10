@@ -1,7 +1,11 @@
+# steps:
+# - label: ":docker: configure image tag"
+#   key: tag:create
+#   commands:
+#   - TAG=$BUILDKITE_BUILD_ID
+#   - buildkite-agent meta-data set "TAG" "\${TAG}"
+#   - buildkite-agent step update "label" "\:sunglasses:\ TAG=${TAG}"
+
 steps:
-- label: ":docker: configure image tag"
-  key: tag:create
-  commands:
-  - TAG=$BUILDKITE_BUILD_ID
-  - buildkite-agent meta-data set "TAG" "\${TAG}"
-  - buildkite-agent step update "label" "\:sunglasses:\ TAG=${TAG}"
+- label: Hello World!
+  command: echo Hello World!
