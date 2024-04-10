@@ -7,5 +7,5 @@
 #   - buildkite-agent step update "label" "\:sunglasses:\ TAG=${TAG}"
 
 steps:
-- label: Hi World :wave:!
+- label: :rocket:Hi World :wave:!
   command: echo Hello World!
