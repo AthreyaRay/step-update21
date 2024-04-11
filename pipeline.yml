@@ -15,7 +15,7 @@ steps:
   agents:
     queue: kubernetes
   plugins:
-  - kubernetes#v3.8.0:
+  - kubernetes:
       podSpec:
         volumes:
         - name: docker-sock
