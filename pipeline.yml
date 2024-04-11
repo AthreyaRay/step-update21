@@ -6,6 +6,38 @@
 #   - buildkite-agent meta-data set "TAG" "\${TAG}"
 #   - buildkite-agent step update "label" "\:sunglasses:\ TAG=${TAG}"
 
+# steps:
+# - label: :rocketssssss::rocket:Hi World :wave:!
+#   command: echo Hello World!
+
 steps:
-- label: :rocketssssss::rocket:Hi World :wave:!
-  command: echo Hello World!
+- label: "Test Docker Socket"
+  agents:
+    queue: kubernetes
+  plugins:
+  - kubernetes#v3.8.0:
+      podSpec:
+        volumes:
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
+            type: Socket
+        containers:
+        - name: docker-test
+          image: docker:20.10.7
+          securityContext:
+            privileged: true
+          env:
+          - name: DOCKER_HOST
+            value: unix:///var/run/docker.sock
+          command: ["sh", "-c"]
+          args:
+          - |
+            echo "Testing Docker socket..."
+            docker version
+            docker run hello-world
+          volumeMounts:
+          - name: docker-sock
+            mountPath: /var/run/docker.sock
+
+
