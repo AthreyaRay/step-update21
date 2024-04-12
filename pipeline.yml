@@ -16,7 +16,7 @@ steps:
 
 - label: ":docker: Build"
   plugins:
-    docker#v3.8.0:
+    docker:
       image: "alpine:latest"
       entrypoint: ["/bin/sh", "-c"]
       commands: "echo 'Hello from Alpine Linux'"
