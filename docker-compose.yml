@@ -4,10 +4,3 @@ services:
     image: nginx:latest
     ports:
       - "8080:80"
-    volumes:
-      - ./html:/usr/share/nginx/html
-  tester:
-    image: appropriate/curl
-    depends_on:
-      - web
-    command: /bin/sh -c "sleep 10 && curl -f http://web:80"

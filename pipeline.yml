@@ -13,17 +13,12 @@
 
 
 steps:
-- label: ":nginx: Run and Test Nginx Server"
+- label: ":nginx: Run Nginx Server for 10 seconds"
   plugins:
     docker-compose#v3.7.0:
       run: web
       config: docker-compose.yml
-
-- label: ":nginx: Cleanup"
-  plugins:
-    docker-compose#v3.7.0:
-      run: web
-      command: "docker-compose down"
+      command: "sh -c 'nginx && sleep 10 && nginx -s stop'"
 
 
 
