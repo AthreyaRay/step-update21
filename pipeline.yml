@@ -18,8 +18,8 @@ steps:
     docker-compose#v3.7.0:
       run: web
       config: docker-compose.yml
-      command: ["/bin/sh", "-c", "npm install && npm start"]
       detach: true
+
 
 
 

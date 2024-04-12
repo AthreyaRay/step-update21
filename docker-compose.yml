@@ -1,8 +1,10 @@
-steps:
-  - label: ":docker: Run Docker Compose in detached mode"
-    plugins:
-      docker-compose#v3.7.0:
-        run: web
-        config: docker-compose.yml
-        command: ["/bin/sh", "-c", "npm install && npm start"]
-        detach: true
+version: '3'
+services:
+  web:
+    image: node:14
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: npm start
+    ports:
+      - "3000:3000"
