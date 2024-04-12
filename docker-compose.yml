@@ -5,6 +5,12 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: /bin/sh -c "npm install && npm start"
+    command: npm start
     ports:
       - "3000:3000"
+
+  tester:
+    image: appropriate/curl
+    depends_on:
+      - web
+    command: /bin/sh -c "sleep 10 && curl -f http://web:3000"
