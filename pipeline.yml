@@ -16,6 +16,7 @@ steps:
   plugins:
     docker#v3.8.0:
       image: "node:14"
+      entrypoint: ""
       workdir: "/app"
       commands:
       - "npm install"
