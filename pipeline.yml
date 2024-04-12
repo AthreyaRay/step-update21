@@ -13,15 +13,14 @@ steps:
 
 
 
+
 - label: ":docker: Build"
   plugins:
     docker#v3.8.0:
-      image: "node:14"
+      image: "alpine:latest"
       entrypoint: ["/bin/sh", "-c"]
-      workdir: "/app"
       commands:
-      - "npm install"
-      - "npm test"
+      - "echo 'Hello from Alpine Linux'"
 
 
 
