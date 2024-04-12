@@ -17,8 +17,6 @@ steps:
     docker#v3.8.0:
       image: "node:14"
       workdir: "/app"
-      volumes:
-      - "./:/app"
       commands:
       - "npm install"
       - "npm test"
