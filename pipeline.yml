@@ -13,12 +13,11 @@
 
 
 steps:
-- label: ":docker: Run Docker Compose in detached mode"
+- label: ":nginx: Run Nginx Server"
   plugins:
     docker-compose#v3.7.0:
       run: web
       config: docker-compose.yml
-      detach: true
 
 
 
