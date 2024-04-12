@@ -14,13 +14,17 @@ steps:
 
 
 
+
 - label: ":docker: Build"
   plugins:
-    docker:
-      image: "alpine:latest"
+    docker#v3.8.0:
+      image: "node:14"
       entrypoint: ""
-      command:
-      - echo 'Hello from Alpine Linux'
+      workdir: "/app"
+      commands:
+      - "npm install"
+      - "npm test"
+
 
 # - label: ":docker: Test with BusyBox"
 #   plugins:
