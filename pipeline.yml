@@ -20,7 +20,7 @@ steps:
       image: "alpine:latest"
       entrypoint: ""
       command:
-      - "echo 'Hello from Alpine Linux'"
+      - echo 'Hello from Alpine Linux'
 
 - label: ":docker: Test with BusyBox"
   plugins:
