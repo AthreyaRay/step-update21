@@ -6,6 +6,78 @@
 #   - buildkite-agent meta-data set "TAG" "\${TAG}"
 #   - buildkite-agent step update "label" "\:sunglasses:\ TAG=${TAG}"
 
+# steps:
+# - label: ":docker: configure image tag"
+#   commands: sudo whoami
+
+
+
 steps:
-- label: :rocketssssss::rocket:Hi World :wave:!
-  command: echo Hello World!
+- label: ":nginx: Run Nginx Server for 10 seconds"
+  plugins:
+    docker-compose#v3.7.0:
+      run: web
+      config: docker-compose.yml
+      command:
+      - "sh -c 'nginx && sleep 10 && nginx -s stop'"
+
+
+
+
+
+
+# - label: ":docker: Build"
+#   plugins:
+#     docker#v3.8.0:
+#       image: "node:14"
+#       entrypoint: ""
+#       workdir: "/app"
+#       command:
+#       - "npm install"
+#       - "npm test"
+
+
+# - label: ":docker: Test with BusyBox"
+#   plugins:
+#     docker#v3.8.0:
+#       image: "busybox:latest"
+#       command:
+#       - ["/bin/sh", "-c", "echo 'Hello from BusyBox'"]
+
+
+
+# steps:
+# - label: :rocketssssss::rocket:Hi World :wave:!
+#   command: echo Hello World!
+
+# steps:
+# - label: "Test Docker Socket"
+#   agents:
+#     queue: kubernetes
+#   plugins:
+#   - kubernetes:
+#       podSpec:
+#         volumes:
+#         - name: docker-sock
+#           hostPath:
+#             path: /var/run/docker.sock
+#             type: Socket
+#         containers:
+#         - name: docker-test
+#           image: docker:20.10.7
+#           securityContext:
+#             privileged: true
+#           env:
+#           - name: DOCKER_HOST
+#             value: unix:///var/run/docker.sock
+#           command: ["sh", "-c"]
+#           args:
+#           - |
+#             echo "Testing Docker socket..."
+#             docker version
+#             docker run hello-world
+#           volumeMounts:
+#           - name: docker-sock
+#             mountPath: /var/run/docker.sock
+
+
