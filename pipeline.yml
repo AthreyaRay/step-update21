@@ -18,13 +18,14 @@ steps:
   plugins:
     docker:
       image: "alpine:latest"
-      commands: "echo 'Hello from Alpine Linux'"
+      command:
+      - "echo 'Hello from Alpine Linux'"
 
 - label: ":docker: Test with BusyBox"
   plugins:
     docker#v3.8.0:
       image: "busybox:latest"
-      commands:
+      command:
       - "echo 'Hello from BusyBox'"
 
 
