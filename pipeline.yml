@@ -21,7 +21,7 @@ steps:
       image: "node:14"
       entrypoint: ""
       workdir: "/app"
-      commands:
+      command:
       - "npm install"
       - "npm test"
 
