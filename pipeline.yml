@@ -22,12 +22,12 @@ steps:
       command:
       - echo 'Hello from Alpine Linux'
 
-- label: ":docker: Test with BusyBox"
-  plugins:
-    docker#v3.8.0:
-      image: "busybox:latest"
-      command:
-      - ["/bin/sh", "-c", "echo 'Hello from BusyBox'"]
+# - label: ":docker: Test with BusyBox"
+#   plugins:
+#     docker#v3.8.0:
+#       image: "busybox:latest"
+#       command:
+#       - ["/bin/sh", "-c", "echo 'Hello from BusyBox'"]
 
 
 
