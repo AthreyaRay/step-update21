@@ -10,18 +10,20 @@ steps:
 - label: ":docker: configure image tag"
   commands: sudo whoami
 
+
 - label: ":docker: Build"
   plugins:
-  - docker#v5.10.0:
+    docker#v3.8.0:
       image: "node:14"
+      workdir: "/app"
+      volumes:
+      - "./:/app"
       environment:
       - "BUILDKITE_BUILD_NUMBER"
-    workdir: /app
-    volumes:
-    - "./:/app"
-    commands:
-    - "npm install"
-    - "npm test"
+      commands:
+      - "npm install"
+      - "npm test"
+
 
 # steps:
 # - label: :rocketssssss::rocket:Hi World :wave:!
