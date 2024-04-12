@@ -18,7 +18,6 @@ steps:
   plugins:
     docker:
       image: "alpine:latest"
-      entrypoint: ["/bin/sh", "-c"]
       commands: "echo 'Hello from Alpine Linux'"
 
 
