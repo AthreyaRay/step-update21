@@ -12,13 +12,17 @@ steps:
 
 
 
+
 - label: ":docker: Build"
   plugins:
     docker#v3.8.0:
       image: "node:14"
-      entrypoint: ""
+      entrypoint: ["/bin/sh", "-c"]
       workdir: "/app"
-      commands: ["sh", "-c", "npm install && npm test"]
+      commands:
+      - "npm install"
+      - "npm test"
+
 
 
 
