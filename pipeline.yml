@@ -27,7 +27,7 @@ steps:
     docker#v3.8.0:
       image: "busybox:latest"
       command:
-      - "echo 'Hello from BusyBox'"
+      - ["/bin/sh", "-c", "echo 'Hello from BusyBox'"]
 
 
 
