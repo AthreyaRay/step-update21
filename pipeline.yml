@@ -11,6 +11,7 @@ steps:
   commands: sudo whoami
 
 
+
 - label: ":docker: Build"
   plugins:
     docker#v3.8.0:
@@ -18,11 +19,10 @@ steps:
       workdir: "/app"
       volumes:
       - "./:/app"
-      environment:
-      - "BUILDKITE_BUILD_NUMBER"
       commands:
       - "npm install"
       - "npm test"
+
 
 
 # steps:
