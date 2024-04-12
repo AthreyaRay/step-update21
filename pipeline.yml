@@ -13,11 +13,21 @@
 
 
 steps:
-- label: ":nginx: Run Nginx Server"
+- label: ":nginx: Run and Test Nginx Server"
   plugins:
     docker-compose#v3.7.0:
       run: web
       config: docker-compose.yml
+      detach: true
+
+- wait
+
+- label: ":nginx: Cleanup"
+  plugins:
+    docker-compose#v3.7.0:
+      run: web
+      command: "docker-compose down"
+
 
 
 
