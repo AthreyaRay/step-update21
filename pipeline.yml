@@ -19,9 +19,7 @@ steps:
       run: web
       config: docker-compose.yml
       command:
-      - sh -c nginx
-      - sh -c sleep 10
-      - sh -c nginx -s stop
+      - "sh -c 'nginx && sleep 10 && nginx -s stop'"
 
 
 
