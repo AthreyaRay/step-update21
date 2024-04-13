@@ -1,5 +1,5 @@
 // This is a sample code file
 function testFunction() {
     console.log("This is a normal line of code.");
-    console.log("🤡 Found a clown emoji here! 🤡");
+    
 }
