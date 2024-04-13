@@ -12,15 +12,18 @@
 
 
 
+# steps:
+# - label: ":nginx: Run Nginx Server for 10 seconds"
+#   plugins:
+#     docker-compose#v3.7.0:
+#       run: web
+#       config: docker-compose.yml
+#       command:
+#       - "sh -c 'nginx && sleep 10 && nginx -s stop'"
 steps:
-- label: ":nginx: Run Nginx Server for 10 seconds"
+- label: ":clown: Run Nginx Server for 10 seconds"
   plugins:
-    docker-compose#v3.7.0:
-      run: web
-      config: docker-compose.yml
-      command:
-      - "sh -c 'nginx && sleep 10 && nginx -s stop'"
-
+    detect-clowns#v2.0.0: ~
 
 
 
