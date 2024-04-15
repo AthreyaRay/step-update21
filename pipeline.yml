@@ -21,8 +21,10 @@
 #       command:
 #       - "sh -c 'nginx && sleep 10 && nginx -s stop'"
 steps:
-- label: ":clown: Run Nginx Server for 10 seconds"
-  commands: echo "tag test 2.2"
+- label: "Run script without checkout"
+  plugins:
+  - thedyrt/skip-checkout#v0.1.0: ~
+  command: "echo 'This step does not require a checkout of the repository'"
 
 
 
