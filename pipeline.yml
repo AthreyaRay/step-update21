@@ -22,7 +22,7 @@
 #       - "sh -c 'nginx && sleep 10 && nginx -s stop'"
 steps:
 - label: ":clown: Run Nginx Server for 10 seconds"
-  commands: echo "tag test 1.0"
+  commands: echo "tag test 2.0"
 
 
 
