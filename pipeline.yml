@@ -34,7 +34,7 @@ steps:
   - git config --global user.name "athreya"
   - "git add CHANGELOG.md"
   - "git commit -m 'Update changelog'"
-  - "git push"
+  - "git push origin HEAD:tester3"
   artifact_paths:
   - "CHANGELOG.md"
 
