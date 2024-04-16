@@ -24,7 +24,7 @@ steps:
 - label: "Run script without checkout"
   plugins:
   - thedyrt/skip-checkout#v0.1.0: ~
-  command: "echo 'This step does not require a checkout of the repository test 2'"
+  command: "echo 'This step doesn't require a checkout of the repository test 2'"
 
 
 
