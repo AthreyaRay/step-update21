@@ -32,9 +32,12 @@ steps:
   - "./test.sh"
   - git config --global user.email "athreya@buildklite.com"
   - git config --global user.name "athreya"
+  - git config --global credential.helper cache
+  # This sets the default cache timeout to 15 minutes. You can change this as needed.
+  - git config --global credential.helper 'cache --timeout=3600'
   - "git add CHANGELOG.md"
   - "git commit -m 'Update changelog'"
-  - "git push origin HEAD:tester3"
+  - "git push "
   artifact_paths:
   - "CHANGELOG.md"
 
