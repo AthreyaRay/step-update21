@@ -20,12 +20,21 @@
 #       config: docker-compose.yml
 #       command:
 #       - "sh -c 'nginx && sleep 10 && nginx -s stop'"
-steps:
-- label: "Run script without checkout"
-  plugins:
-  - thedyrt/skip-checkout#v0.1.0: ~
-  command: "echo 'This step does not require a checkout of the repository test 2'"
+# steps:
+# - label: "Run script without checkout"
+#   plugins:
+#   - thedyrt/skip-checkout#v0.1.0: ~
+#   command: "echo 'This step does not require a checkout of the repository test 2'"
 
+steps:
+- label: "Update Changelog"
+  commands:
+  - "./test.sh"
+  - "git add CHANGELOG.md"
+  - "git commit -m 'Update changelog'"
+  - "git push"
+  artifact_paths:
+  - "CHANGELOG.md"
 
 
 
