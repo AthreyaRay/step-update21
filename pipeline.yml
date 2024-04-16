@@ -30,6 +30,8 @@ steps:
 - label: "Update Changelog"
   commands:
   - "./test.sh"
+  - git config --global user.email "athreya@buildklite.com"
+  - git config --global user.name "athreya"
   - "git add CHANGELOG.md"
   - "git commit -m 'Update changelog'"
   - "git push"
